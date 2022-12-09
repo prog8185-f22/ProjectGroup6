@@ -113,7 +113,7 @@ if(!isset($_GET['id'])){
 				<div class="btm_sec">
 					<h1><?php echo $row['prod_name'] ?></h1>
 					<p><?php echo $row2['seller_name'] ?></p>
-					<h2>Rs.<?php echo $row['ps_price'] ?> /kg</h2>
+					<h2>&#36 <?php echo $row['ps_price'] ?> /kg</h2>
 					<?php 
 						
 							echo '<button onclick="purchase('.$ps_id.','.$seller_id.')">Add to cart</button>';	
@@ -175,7 +175,7 @@ else if(isset($_GET['id'])){
 				<div class="btm_sec">
 					<h1><?php echo $row['prod_name'] ?></h1>
 					<p><?php echo $row2['seller_name'] ?></p>
-					<h2>Rs.<?php echo $row['ps_price'] ?></h2>
+					<h2>&#36 <?php echo $row['ps_price'] ?></h2>
 					<?php 
 							echo '<button onclick="purchase('.$ps_id.','.$seller_id.')">Add to cart</button>';
 							// echo '<button onclick="">Remove from wishlist</button>';

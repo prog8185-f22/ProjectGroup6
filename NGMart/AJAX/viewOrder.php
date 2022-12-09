@@ -34,9 +34,9 @@ while($orders=mysqli_fetch_array($result)){
             echo "<tr><td><div class='product_details'>";
 			echo "<p><b>".$prod['prod_name']."</b></p>";
             if($prod['ps_price']!=$orders['order_price']){
-                echo "<p style='font-size:17px;'><s style='color:grey; font-size:15px;'>₹".$prod['ps_price']."</s> ₹".$orders['order_price']."</p>";
+                echo "<p style='font-size:17px;'><s style='color:grey; font-size:15px;'>$".$prod['ps_price']."</s> $".$orders['order_price']."</p>";
             }else{
-                echo "<p style='font-size:18px;'>₹".$prod['ps_price']."</p>";
+                echo "<p style='font-size:18px;'>$".$prod['ps_price']."</p>";
             }
 			
 			echo "<p style='font-size:17px;'>Qty:".$orders['order_quantity']."</p>";
@@ -70,7 +70,7 @@ while($orders=mysqli_fetch_array($result)){
 	// 		<td>
 	// 			<div class="product_details">
 	// 				<p>Product name</p>
-	// 				<p>₹20</p>
+	// 				<p>$20</p>
 	// 				<!-- <p> 25/12/21</p> -->
 	// 			</div>
 	// 		</td>

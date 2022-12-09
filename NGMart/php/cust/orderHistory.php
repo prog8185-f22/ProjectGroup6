@@ -224,7 +224,7 @@ if(isset($_SESSION['id'])){
                     <div class="prod"><b><?php echo $prod['prod'];?></b></div>
                     <div class="details">
                         Ordered Qty : <?php echo $orders['order_quantity']?><br>
-                        Total Price : &#8377 <?php echo $orders['order_quantity']*$orders['order_price']?><br>
+                        Total Price : &#36 <?php echo $orders['order_quantity']*$orders['order_price']?><br>
                         Sold By : <?php echo $prod['seller'];?><br>
                         Ordered On : <?php echo $orders['order_date'];?><br>
                         Order Status : <?php echo $orders['order_status'];?><br>

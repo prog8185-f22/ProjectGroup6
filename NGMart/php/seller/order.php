@@ -114,7 +114,7 @@ if(isset($_SESSION['reg_id']))
                 <tr height=150px>
                     <td width=150px><a href=""><img class="table_image" src="../../images/<?php echo $rowi['ps_image'] ?>"></td>
                     <td><h2 style="margin-bottom:0px;"><?php echo $rowi['prod'] ?></h2><div class="seller">Sold by <?php echo $rowi['seller'] ?></div></td>
-                    <td>&#8377 <?php echo $row['order_price']?></td>
+                    <td>&#36 <?php echo $row['order_price']?></td>
                     <td width=100px>x <?php echo $row['order_quantity'] ?></td>
                     <td width=150px>
                         <a href="delete_cartitems.php?add_id=<?php echo $add_id ?> &order_final=true&id=<?php echo $row['cart_id'] ?>"><button class="carttablebuttons">Delete from cart</button></a><br><BR>
@@ -140,25 +140,25 @@ if(isset($_SESSION['reg_id']))
         <table width=100%>
             <tr>
                 <td class="pay_head">Subtotal <label class="sub_head">(<?php echo $item_count?> items) </label></td>
-                <td class="pay_price" style="text-align:right">&#8377 <?php echo $subtotal ?></td> <!-- &#8377 - ruppee symbol-->
+                <td class="pay_price" style="text-align:right">&#36 <?php echo $subtotal ?></td> <!-- &#36 - ruppee symbol-->
             </tr>
             <tr>
                 <td class="pay_head">Delivery</td>
-                <td style="text-align:right">&#8377 20.00</td>
+                <td style="text-align:right">&#36 20.00</td>
             </tr>
             <tr>
-                <td class="pay_head">Tax <label class="sub_head"> GST 10% (included)</label></td>
-                <td style="text-align:right">&#8377 <?php echo $tax ?></td>
+                <td class="pay_head">Tax <label class="sub_head"> HST 10% (included)</label></td>
+                <td style="text-align:right">&#36 <?php echo $tax ?></td>
             </tr>
             <tr>
                 <td class="pay_head">Total paid by customer</td>
-                <td style="text-align:right">&#8377 <?php echo $total ?></td>
+                <td style="text-align:right">&#36 <?php echo $total ?></td>
             </tr>
         </table>
         <div class="color_bottom">
             <table width=100%><tr>
                 <td class="pay_head">Total paid by customer</td>
-                <td style="text-align:right">&#8377 <?php echo $total ?></td>
+                <td style="text-align:right">&#36 <?php echo $total ?></td>
             </tr></table>
         </div>
         
@@ -176,7 +176,7 @@ if(isset($_SESSION['reg_id']))
 	        	data-amount="<?php echo $paise_total ?>"
 	        	data-name="Payment"
 	        	data-description="Purchace with NGMart"
-	        	data-currency="inr"
+	        	data-currency="cad"
 	        	data-email="anubenoy@mca.ajce.in">
 	            </script>
             </form>
