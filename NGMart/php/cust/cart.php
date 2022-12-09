@@ -133,7 +133,7 @@ if(isset($_SESSION['id'])){
                     }
             // ?> 
             <!-- --------------------------------- -->
-                <b> Subtotal (<?php echo $row['count'] ?>) : <i style="color:brown"> &#8377 <?php echo $total ?> </i></b>
+                <b> Subtotal (<?php echo $row['count'] ?>) : <i style="color:brown"> &#36 <?php echo $total ?> </i></b>
                     <?php if($cart_count>0 )
                     {?>
                         <center> <a href="deliveryAdd.php"><button> Proceed to buy </button> </a></center>
@@ -186,16 +186,16 @@ if(isset($_SESSION['id'])){
 					<?php if($offer_price < $org_price)
 					{?>
                         <div class="price">
-                        <h4 style="color:grey; float:left;">Price : <s>&#8377 <?php echo $rowi['ps_price']; ?> </s> &nbsp;</h4>
-						<h4 style="color:red;"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h4>
+                        <h4 style="color:grey; float:left;">Price : <s>&#36 <?php echo $rowi['ps_price']; ?> </s> &nbsp;</h4>
+						<h4 style="color:red;"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h4>
                         </div>
-                        <div class="pr">&#8377 <?php echo $offer_price*$row['cart_qty']?></div>
+                        <div class="pr">&#36 <?php echo $offer_price*$row['cart_qty']?></div>
 			  <?php } 
 			  		else{?>
                         <div class="price">
-						<h4 style="color:grey;">Price : &#8377 <?php echo $rowi['ps_price'];?> </h4>
+						<h4 style="color:grey;">Price : &#36 <?php echo $rowi['ps_price'];?> </h4>
                         </div>
-                        <div class="pr">&#8377 <?php echo $rowi['ps_price']*$row['cart_qty']?></div>
+                        <div class="pr">&#36 <?php echo $rowi['ps_price']*$row['cart_qty']?></div>
 					   <?php }?>
                     
                     <div class="more" style="font-size:14px;">Qty :  <input type="number" name="qty" class="qty_box" value="<?php echo $row['cart_qty'] ?>" min="1" max="<?php echo $rowi['ps_total_stock']?>" onchange="updateqty(this,<?php echo $row['cart_id']?>)" style="font-size:15px;"></div>

@@ -240,13 +240,13 @@ if (isset($_SESSION['reg_id']))
 												<?php if($offer_price < $org_price)
 												{?>
 											
-													<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-													<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+													<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+													<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 
 										  <?php } 
 										  		else{?>
 											
-													<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+													<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 													<h5 style="visibility:hidden">...</h5>
 
 											   <?php }?>
@@ -300,13 +300,13 @@ if (isset($_SESSION['reg_id']))
 											<?php if($offer_price < $org_price)
 											{?>
 										
-												<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-												<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+												<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+												<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 
 									  <?php } 
 											  else{?>
 										
-												<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+												<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 												<h5 style="visibility:hidden">...</h5>
 
 										   <?php }?>
@@ -387,13 +387,13 @@ if (isset($_SESSION['reg_id']))
 												<?php if($offer_price < $org_price)
 												{?>
 											
-													<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-													<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+													<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+													<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 
 										  <?php } 
 										  		else{?>
 											
-													<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+													<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 													<h5 style="visibility:hidden">...</h5>
 
 											   <?php }?>
@@ -447,12 +447,12 @@ if (isset($_SESSION['reg_id']))
 											<?php if($offer_price < $org_price)
 											{?>
 										
-												<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-												<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+												<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+												<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 									  <?php } 
 									  		else{?>
 										
-												<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+												<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 												<h5 style="visibility:hidden">...</h5>
 										   <?php }?>
 
@@ -528,12 +528,12 @@ if (isset($_SESSION['reg_id']))
 														<?php if($offer_price < $org_price)
 														{?>
 													
-															<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-															<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+															<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+															<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 												  <?php } 
 														  else{?>
 													
-															<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+															<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 															<h5 style="visibility:hidden">...</h5>
 													   <?php }?>
 			
@@ -584,12 +584,12 @@ if (isset($_SESSION['reg_id']))
 													<?php if($offer_price < $org_price)
 													{?>
 												
-														<h2 style="color:red"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
-														<h5 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h5>
+														<h2 style="color:red"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Offer</label></h2>
+														<h5 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h5>
 											  <?php } 
 											  		else{?>
 												
-														<h2> &#8377 <?php  echo $row['ps_price'];?> </h2>
+														<h2> &#36 <?php  echo $row['ps_price'];?> </h2>
 														<h5 style="visibility:hidden">...</h5>
 												   <?php }?>
 

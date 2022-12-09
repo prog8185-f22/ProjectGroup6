@@ -144,10 +144,10 @@ if($_GET['id']==1)
 				echo "<td>".$orders['order_date']."</td>";
 				echo "<td>".$cust['name']."</td>";
 				// echo "<td>"."COD"."</td>";
-				echo "<td>".'₹'.$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_price']."</td>";
 				echo "<td>".$orders['order_status']."</td>";
 				echo "<td>".$orders['order_quantity']."</td>";
-				echo "<td>".'₹'.$orders['order_quantity']*$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_quantity']*$orders['order_price']."</td>";
 				?>
 				</tr>
 			 <?php
@@ -222,10 +222,10 @@ if($_GET['id']==1)
 	   echo "<td>".$orders['order_date']."</td>";
 	   echo "<td>".$cust['name']."</td>";
 	   // echo "<td>"."COD"."</td>";
-	   echo "<td>".'₹'.$orders['order_price']."</td>";
+	   echo "<td>".'$'.$orders['order_price']."</td>";
 	   echo "<td>".$orders['order_status']."</td>";
 	   echo "<td>".$orders['order_quantity']."</td>";
-	   echo "<td>".'₹'.$orders['order_quantity']*$orders['order_price']."</td>";
+	   echo "<td>".'$'.$orders['order_quantity']*$orders['order_price']."</td>";
 	   ?>
 		   <td>
 		   	   <a href="?id=<?php echo $orders['order_id']; ?>&ps_id=<?php echo $orders['order_ps_id']; ?>"><button style="background-color:#3366ff;padding:7px;border:none;color:white;">Refund</button></a>
@@ -303,10 +303,10 @@ if($_GET['id']==2)
 				echo "<td>".$orders['order_date']."</td>";
 				echo "<td>".$cust['name']."</td>";
 				// echo "<td>"."COD"."</td>";
-				echo "<td>".'₹'.$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_price']."</td>";
 				echo "<td>".$orders['order_status']."</td>";
 				echo "<td>".$orders['order_quantity']."</td>";
-				echo "<td>".'₹'.$orders['order_quantity']*$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_quantity']*$orders['order_price']."</td>";
 				?>
 					<td>
 						<a href="cancelOrder.php?o_id=<?php echo $orders['order_id']; ?>"><button style="background-color:#ff3300;padding:7px;border:none;color:white;">Cancel</button></a>
@@ -383,10 +383,10 @@ if($_GET['id']==4)
 				echo "<td>".$orders['order_date']."</td>";
 				echo "<td>".$cust['name']."</td>";
 				// echo "<td>"."COD"."</td>";
-				echo "<td>".'₹'.$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_price']."</td>";
 				echo "<td>".$orders['order_status']."</td>";
 				echo "<td>".$orders['order_quantity']."</td>";
-				echo "<td>".'₹'.$orders['order_quantity']*$orders['order_price']."</td>";
+				echo "<td>".'$'.$orders['order_quantity']*$orders['order_price']."</td>";
 				?>
 					<td>
 						<a href="product_review.php?o_id=<?php echo $orders['order_id']; ?>&ps_id=<?php echo $orders['order_ps_id']; ?>&id=2"><button style="background:linear-gradient(to bottom right, rgb(240, 120, 55),rgb(242, 85, 73));padding:7px;border:none;color:white;width:120px;">Product Review</button></a>
@@ -420,7 +420,7 @@ if($_GET['id']==4)
 			<td>
 				<div class="product_details">
 					<p>Product name</p>
-					<p>₹20</p>
+					<p>$20</p>
 
 				</div>
 			</td>

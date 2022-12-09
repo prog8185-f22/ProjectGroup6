@@ -11,7 +11,7 @@ require('pconfig.php');
 		data-name="Payment"
 		data-description="Purchace with NGMart"
 		data-image="../../images/logo.png"
-		data-currency="inr"
+		data-currency="cad"
 		data-email="anubenoy@mca.ajce.in"
 	>
 	</script>

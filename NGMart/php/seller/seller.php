@@ -169,7 +169,7 @@ if(isset($_GET['ps_id']))
 		<label class="labels"> Orginal Price :</label> 
 		<label class="labels" style="margin-left:26px;">Offer Price :</label>
 		<div class="addInput" >	
-		<div class="p">Rupees</div>
+		<div class="p">CAD</div>
 			<input type="text" style="width:83px" name="price" id="price" min="1" value="<?php echo $row['ps_price']?>" pattern="^\d+(\.\d{1,2})?" required>
 		
 			<input type="text" style="width:83px" name="discount_price" id="discount_price" min="1" value="<?php echo $row['ps_price']-($row['ps_discount_perct']/100*$row['ps_price'])?>" pattern="^\d+(\.\d{1,2})?" disabled>
@@ -236,7 +236,7 @@ if($_GET['id'] >= 1)
 		</div> 
 
 		<div class="addInput">
-		<div class="p">Rupees</div>
+		<div class="p">CAD</div>
 			<input type="number" style="width:200px" name="price" id="price" min="1" placeholder="Price" required>
 		</div> 
 		
@@ -334,12 +334,12 @@ if($_GET['id'] == -1)
 					echo "<td>$i</td>";
 					echo "<td><img src='../../images/".$ro2['ps_image']."' style='border-radius:50%;height:40px;width:40px;' /></td>";
 					echo "<td>".$ro3['prod_name']."</td>";
-					if($offer_price!=$ro2['ps_price']){		echo "<td><s><h5 style='color:grey;'>".'₹'.$ro2['ps_price']."</h5></s> ₹".$offer_price."</td>";
-					}else{	echo "<td>".'₹'.$ro2['ps_price']."</td>";
+					if($offer_price!=$ro2['ps_price']){		echo "<td><s><h5 style='color:grey;'>".'$'.$ro2['ps_price']."</h5></s> $".$offer_price."</td>";
+					}else{	echo "<td>".'$'.$ro2['ps_price']."</td>";
 					}
 					echo "<td>".$ro2['ps_total_stock']."</td>";
 					echo "<td>".$ro2['ps_desc']."</td>";
-					echo "<td>".'₹'.$ro2['ps_total_stock']*$ro2['ps_price']."</td>";
+					echo "<td>".'$'.$ro2['ps_total_stock']*$ro2['ps_price']."</td>";
 					echo "<td>".$ro1['inventory_date']."</td>";
 					echo "<td>".$ro1['inventory_expiry_date']."</td>";
 					$expdate = new DateTime(date($ro1['inventory_expiry_date']));
@@ -422,9 +422,9 @@ if($_GET['id'] == -1)
 					 <td><?php echo $i?></td>
 					 <td><img src="../../images/<?php echo $row['ps_image']?>" style="border-radius:50%;height:40px;width:40px;"/></td>
         	         <td><?php echo $row['prod_name']?></td>
-        	         <td><?php echo '₹'.$row['ps_price']?></td>
+        	         <td><?php echo '$'.$row['ps_price']?></td>
 					 <td><?php echo $row2['s'] //actually display sum of stock of same ps_id and manu_date?> </td> 
-					 <td><?php echo '₹'.$row2['s']*$row['ps_price']?></td>
+					 <td><?php echo '$'.$row2['s']*$row['ps_price']?></td>
         	         <td><?php echo $row2['inventory_date']?></td>
 					 <td><?php echo $row2['inventory_expiry_date']?></td>
 					 <td><?php echo $diffBtwTodayAndExpiry->days.' days' ?></td>
@@ -511,9 +511,9 @@ if($_GET['id'] == -1)
 				 <td><?php echo $i?></td>
 				 <td><img src="../../images/<?php echo $row['ps_image']?>" style="border-radius:50%;height:40px;width:40px;"/></td>
                  <td><?php echo $row['prod_name']?></td>
-                 <td><?php echo '₹'.$row['ps_price']?></td>
+                 <td><?php echo '$'.$row['ps_price']?></td>
 				 <td><?php echo $row2['s'] //actually display sum of stock of same ps_id and manu_date?> </td> 
-				 <td><?php echo '₹'.$row2['s']*$row['ps_price']?></td>
+				 <td><?php echo '$'.$row2['s']*$row['ps_price']?></td>
                  <td><?php echo $row2['inventory_date']?></td>
 				 <td><?php echo $row2['inventory_expiry_date']?></td>
 				 <td><?php echo $diffBtwTodayAndExpiry->days.' days' ?></td>		 

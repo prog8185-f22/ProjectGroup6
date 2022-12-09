@@ -9,7 +9,7 @@ if(isset($_POST['stripeToken'])){
 
 	$data=\Stripe\Charge::create(array(
 		"amount"=>1000,
-		"currency"=>"inr",
+		"currency"=>"cad",
 		"description"=>"Purchase with NGMart",
 		"source"=>$token,
 	));

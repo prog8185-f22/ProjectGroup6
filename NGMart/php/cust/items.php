@@ -230,13 +230,13 @@ $seller_id = $_GET['seller_id'];
                 <?php if($offer_price < $org_price)
 						{?>
                            <div class="pr">
-							    <h3 style="color:red;"> &#8377 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Off</label></h3>
-							    <h6 style="color:grey"><s>&#8377 <?php echo $row['ps_price']; ?> </s></h6>
+							    <h3 style="color:red;"> &#36 <?php echo $offer_price;?> &nbsp;<label style="background-color:yellow; opacity: 0.7; width:30%; color:black"><?php echo $discount?>%  Off</label></h3>
+							    <h6 style="color:grey"><s>&#36 <?php echo $row['ps_price']; ?> </s></h6>
                             </div>
 				  <?php } 
 				  		else{?>
                             <div class="pr">
-							    &#8377 <?php  echo $row['ps_price'];?>
+							    &#36 <?php  echo $row['ps_price'];?>
                             </div>
 					   <?php }?>   
                    
