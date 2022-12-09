@@ -1,0 +1,353 @@
+@font-face{
+    font-family: fontone;
+    src:url(../fonts/Rubik.ttf);
+}
+@font-face{
+    font-family: fonttwo;
+    src:url(../fonts/YuseiRegular.ttf);
+}
+*{
+    font-family: fontone;
+    font-size:12px;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(245,249,251); */
+    font-family: fontone;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+.order_main{
+    position:relative;
+    left:15%; 
+    /* transform:transilate(-50%); */
+    width:85%;
+    margin:10px 0px;
+}
+#d_logo{
+    max-width:13%;
+    height:auto;
+    float:left;
+}
+.status .logo_hr{
+    position: relative;
+    width:77%; 
+    top:25px;
+    /* margin-top:25px; */
+    margin-left:4px;
+    border: 1px solid rgb(240, 239, 239);
+}
+.status .hr_progress{
+    position: absolute;
+    width:13%; 
+    top:19px;
+    margin-left:4px;
+    border: 1px solid rgb(241, 139, 5);
+}
+.order_main .status{
+    width:400px;
+    height:50px;
+    margin-left:13.5%;
+}
+.status p{
+    position: relative;
+    top:30px;
+    font-size: 9px;
+    margin:0px 5px;
+    float:left;
+    font-weight: bold;
+}
+.ship_add{
+    position: relative; 
+    width:900px;
+    /* height:100px;   */
+}
+.order_main h4{
+    font-size: 18px;
+}
+.loca_box{
+    height:70px;
+    width:70px;
+    float:left;
+}
+.loca_logo{
+    position: relative;
+    /* background-color: rgb(255, 223, 163); */
+    background: linear-gradient(
+        to bottom right,
+        rgb(240, 120, 55,.1),
+        rgb(242, 85, 73,.1)
+      );
+    height:40px;
+    width:40px;
+    border-radius: 100%;
+    float:left;
+}
+.loca_logo img{
+    position: absolute;
+    left:10px;
+    top:10px;
+    z-index:3;   
+}
+.addr_box{
+    position: relative;
+    height: auto;
+    width:700px;
+    /* background-color: rgba(172, 255, 47, 0.281); */
+    float:left;
+}
+
+.addr_box p,h5{
+    margin:4px 0;
+    color:rgb(172, 170, 170);
+    font-size: 13px;
+  }
+
+.deliver_btn {
+    width:60px;
+    height:30px;
+    color: rgb(255, 94, 1);
+    margin-top: 15px;
+    border: none;
+    font-size: 11px;
+    font-family: fontone;
+    font-weight: 800;
+    background: linear-gradient(
+        to bottom right,
+        rgb(240, 120, 55,.1),
+        rgb(242, 85, 73,.1)
+      );
+    box-shadow: 3px 3px 10px rgba(252, 252, 252, 0.749);
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+    border-radius: 10%;
+  }
+  .addr_box button:hover {
+    font-size: 11px;
+    box-shadow: 3px 3px 10px rgba(240, 120, 55, 0.447);
+  }
+  
+  .edit_btn{
+      position: relative;
+  }
+  .orders{
+      position: relative;
+      top:40px;
+      width:100%;
+      height:auto;
+  } 
+
+.cartitems{
+    margin:10px;
+    padding: 10px;
+    width:96%;
+    height:120px;
+    /* border-bottom: 1px solid rgba(131, 121, 121, 0.16); */
+    /* background-color: rgb(194, 38, 38);  */
+    /* background: linear-gradient(
+        to bottom right,
+        rgb(240, 120, 55,.1),
+        rgb(242, 85, 73,.1)
+      ); */
+    display: block;
+}
+.cartitems img{
+    float: left;
+    border-radius: 20px 0px 0px 20px;
+    width:100px;
+    height: 100px; 
+}
+.table_image{
+    width:100px;
+    height: 100px; 
+}
+.cartitems a{
+    text-decoration: none;
+    color: black;
+}
+.cartitems h2{
+    font-size:medium;
+}
+.seller{
+    color:rgb(172, 170, 170);
+
+}
+.thirdclass{
+    position: relative;
+    padding-top: 18px;
+    float: left;
+    height:50%;
+    min-width: 100px;
+    margin-left: 70px;
+}
+
+.dis{
+    position:relative;
+    margin-left: 30px;
+    height: 90%;
+    float:left;
+    width:230px;
+}
+.dis button{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+}
+.del{
+    border:none;
+    cursor: pointer;
+    background-color: none;
+    border-radius: 4px;
+}
+
+.more{
+    position: relative;
+    float: right;
+}
+.del_item{
+    position: relative;
+    float:right;
+}
+.pay_summary{
+    position: relative;
+    top:60px;
+}
+.sub_head{
+    color:rgb(172, 170, 170);
+}
+.pay_btn{
+    position: relative;
+}
+.deliver_btn1 {
+    width:222px;
+    height:25px;
+    margin-top: 30px;
+    border: none;
+    color: white;
+    font-size: 10px;
+    font-family: fontone;
+    font-weight: 800;
+    border-radius: 2px;
+    /* margin-top: 6px; */
+    background: linear-gradient(
+      to bottom right,
+      rgb(240, 120, 55),
+      rgb(242, 85, 73)
+    );
+    box-shadow: 3px 3px 10px rgba(240, 120, 55, 0.749);
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+  }
+
+  .box_div{
+      width:1000px;
+      /* height:100vh; */
+      /* background-color: aqua; */
+          /* background-color: rgb(245,249,251); */
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.125) 0px 7px 10px, rgb(250, 251, 252) -10px -10px 10px;
+  }
+
+  .color_bottom{
+      position: relative;
+      left: -20px;
+      height: 20px;
+      margin-top: 14px;
+      width: 100%;
+      background-color: rgb(245,249,251);
+      padding: 20px;
+      border-radius: 0px 0px 5px 5px;
+  }
+  .carttablebuttons{
+      width:100%;
+      height:25px;
+  }
+
+
+  /* error page styling  ----------------------- */
+
+  .item_top_container{
+    /* height: 100vh; */
+    width:1000px;
+    padding:20px;
+    height: 300px;
+    /* background-color: rgb(215, 159, 38); */
+    margin:25px 0px;
+    /* left:0; */
+    /* transform: translate(0%); */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; */
+}
+.horizontal_scroll{
+    position: relative;
+    display: flex;
+    flex-wrap: no-wrap;
+    overflow-x: scroll;
+}
+.item_top_container .headerforerror{
+    padding: 10px;
+    width:980px;
+    background-color: rgb(208, 63, 63);
+    text-align: center;
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: white;
+    margin-bottom: 10px;
+}
+.item_top_container .cust_items{
+    position: relative;
+    min-width: 210px;
+    height: 250px;
+    /* background-color: chocolate; */
+    float: left;
+    margin:5px;
+    border-radius:10px;
+    border:1px rgba(255, 0, 0, 0.714) solid;
+}
+.cust_items img{
+    width: 120px;
+    height:120px;
+}
+.item_name{
+    text-align: center;
+    min-width: 210px;
+    margin-bottom: -10px;
+}
+.name{
+    font-size: 13px;
+    font-family: sans-serif;
+    color:black;
+}
+.qty{
+    margin-top: 0px;
+    position: relative;
+    font-size: 12px;
+    font-family: sans-serif;
+    color:rgba(0, 0, 0, 0.399);
+}
+.price{
+    color:red;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.cust_items button{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    border-top:1px dotted rgba(21, 80, 228, 0.173);
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px 0px 0px 10px;
+    color:blue;
+    cursor: pointer;
+}
+
+/* error page styling ends here  */
