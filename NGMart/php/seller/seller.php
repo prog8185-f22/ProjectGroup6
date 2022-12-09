@@ -14,6 +14,7 @@ if(isset($_SESSION['id']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home page</title>
+	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
 	<link href="../../style/style.css" rel="stylesheet" />
 	<link href="../../style/seller_style.css" rel="stylesheet" />
 	<style>

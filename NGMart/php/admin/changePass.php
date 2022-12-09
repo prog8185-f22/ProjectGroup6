@@ -27,6 +27,7 @@
            <meta charset="UTF-8">
            <meta name="viewport" content="width=initial-scale=1.0">
            <title>Document</title>
+	       <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
             <!-- verifying new password -->
             <script>
                 function err(){
