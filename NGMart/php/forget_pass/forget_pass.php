@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Assistance</title>
+	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
     <link rel="stylesheet" href="../../style/forget_mail_style.css">
     <script>
         email=false;

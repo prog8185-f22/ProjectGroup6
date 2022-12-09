@@ -13,6 +13,7 @@ if(isset($_SESSION['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Wishlist</title>
+	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
 	<link href="../../style/style.css" rel="stylesheet"/>
 </head>
 <body>

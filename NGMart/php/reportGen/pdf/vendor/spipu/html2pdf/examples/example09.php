@@ -41,6 +41,7 @@ if ($generate) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
         <title>Exemple d'auto génération de PDF</title>
+	    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
     </head>
     <body>
 <?php

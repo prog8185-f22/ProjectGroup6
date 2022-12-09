@@ -40,6 +40,7 @@ if(isset($_SESSION['reg_id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a delivery address</title>
+	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
     <link href="../../style/deliveryAdd_style.css" rel="stylesheet"/>
 
     <script>
