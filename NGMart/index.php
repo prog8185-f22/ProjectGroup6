@@ -75,10 +75,26 @@ if (isset($_SESSION['reg_id']))
 		window.addEventListener('load', function() {
 			document.getElementById("animationonload").style.cssText = "display:none";
 		});
+
+		function isMobile(){
+			var match = window.matchMedia || window.msMatchMedia;
+			if(match) {
+				var mq = match("(pointer:coarse)");
+				return mq.matches;
+			}
+			return false;
+		}
+
+		function check(){
+			var type=isMobile();
+			if (type!=false){
+				window.location.replace("mobilepage.html");
+			}
+		}
 	</script>
 </head>
 
-<body>
+<body onload="check()">
 	<div class="topblack">
 		<div class="leftblock">
 			<p>For enquiry call 123 | email on <a style="color:rgba(255, 255, 255, 0.851);" href="mailto:admin@gmail.com"> admin@gmail.com </a></p>
