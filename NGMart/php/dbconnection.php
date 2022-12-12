@@ -19,16 +19,6 @@ function del()
         $manDate = new DateTime(date($row['inventory_date']));
         $diffOfTodayWithMan = $manDate->diff(new DateTime(date('y-m-d h:i:s'))); // period from manufacturẻ
 
-        // echo $diffOfTodayWithMan->days."< difference from manufacture date <br>";
-        // echo $diffOfTodayWithMan->m."< difference from manufacture date <br>";
-        // echo $diffOfTodayWithMan->y."< difference from manufacture date <br>";
-        // echo $period->days."< period of expiry <br>";
-        // echo $period->m."< period of expiry <br>";
-        // echo $period->y."< period of expiry <br>";
-
-        // 20 04 2020 to 24 08 2020 -> 30days, 1 month, 0 years; 
-        // 02 jan 2020 to 01 feb 2020 -> 29days, 1 month , 0 years; 
-
         if ( $diffOfTodayWithMan->days > $period->days && $diffOfTodayWithMan->m >= $period->m && $diffOfTodayWithMan->y >= $period->y ) 
         {
                 // echo "gonna change 1 <br>";
@@ -118,20 +108,8 @@ function del()
                         mysqli_query($GLOBALS['con'],$sql7);
                     }
                 } 
-            
-            // $sql6="UPDATE product_seller_tbl SET ps_total_stock=(SELECT sum(inventory_stock) FROM inventory_tbl WHERE inventory_ps_id=$ps_id and inventory_status='1' ) WHERE ps_id=$ps_id";
-            // if(mysqli_query($GLOBALS['con'],$sql6))
-            // {echo"done";}
-            // else{
-            //     $sql7="DELETE FROM product_seller_tbl WHERE ps_id=$ps_id";
-            //     mysqli_query($GLOBALS['con'],$sql7);
-            // }
         }
-        // else{
-        //     echo "not gonna change <br>";
-        // }
     }
     
 }
-// date_default_timezone_set("Asia/Kolkata");
 ?>
