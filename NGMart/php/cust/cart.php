@@ -20,7 +20,6 @@ if(isset($_SESSION['id'])){
 				
                 if($ps_stock==0)
                 {
-                    echo "delelted";
                     //  delete cart item if it goes out of stock
                     $sqldel="DELETE FROM cart_tbl WHERE cart_id=$cart_id";
                     mysqli_query($con,$sqldel);

@@ -30,31 +30,7 @@ if (isset($_SESSION['reg_id']))
 	    }
 	
 	}
-	// update cart_tbl if products already expired
-	// $sql = "SELECT * FROM `inventory_tbl` as inv, cart_tbl as c where c.ps_id = inv.inventory_ps_id and c.customerreg_id = $reg_id" ;
-	// $result = mysqli_query($con, $sql);
-
-	// while($row=mysqli_fetch_array($result)){
-
-	//     $cart_id = $row['cart_id'];
-	//     $ExpiryDate = new DateTime(date($row['inventory_expiry_date']));
-	//     $ManDate = new DateTime(date($row['inventory_date']));
-
-	//     $diffOfManWithExpiry = $ManDate -> diff($ExpiryDate);
-	//     $diffOfTodayWithExpiry = $ManDate -> diff($now);
-
-	//     if ($diffOfTodayWithExpiry->days < $diffOfManWithExpiry->days){
-	//         // delete query here ;
-	//         $sqlDelete = "DELETE FROM cart_tbl WHERE cart_id = $cart_id";
-	//         mysqli_query($con, $sqlDelete);
-	//     }
-	
-	// }
-
 } 
-// echo $_SESSION['reg_id'];
-// echo $_SESSION['id'];
-
 
 ?>
 
@@ -77,25 +53,58 @@ if (isset($_SESSION['reg_id']))
 		});
 
 		function isMobile(){
-			var match = window.matchMedia || window.msMatchMedia;
-			if(match) {
-				var mq = match("(pointer:coarse)");
-				return mq.matches;
-			}
-			return false;
-		}
+            var match = window.matchMedia || window.msMatchMedia;
+            if(match) {
+                var mq = match("(pointer:coarse)");
+                return mq.matches;
+            }
+            return false;
+        }
 
-		function check(){
-			var type=isMobile();
-			if (type!=false){
-				window.location.replace("mobilepage.html");
+        function check(){
+            var type=isMobile();
+            if (type!=false){
+                window.location.replace("mobilepage.html");
+            }
+        }
+
+		function modeDataChanged(){
+			var elementsdata = document.getElementsByClassName("modeData");
+			var checkedValue = document.getElementById("modeDataID").checked;
+			
+			if(checkedValue){
+				var url = "updateMode.php?checked='true'";
+				for(i=0 ; i<elementsdata.length; i++){
+				elementsdata[i].style.cssText = "filter : invert(1) hue-rotate(180deg)";
+				}
 			}
+			else{
+				var url = "updateMode.php?checked='false'";
+				for(i=0 ; i<elementsdata.length; i++){
+					elementsdata[i].style.cssText = "filter : none";
+				}
+			}
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    if(this.responseText == false){
+                        console.log("returning false");
+                        window.location= url;
+                    }
+                    else{
+                        window.location= "index.php";
+                    }
+                }
+
 		}
+	}
+
 	</script>
 </head>
 
 <body onload="check()">
-	<div class="topblack">
+	<div class="topblack modeData">
 		<div class="leftblock">
 			<p>For enquiry call 123 | email on <a style="color:rgba(255, 255, 255, 0.851);" href="mailto:admin@gmail.com"> admin@gmail.com </a></p>
 		</div>
@@ -114,7 +123,7 @@ if (isset($_SESSION['reg_id']))
 
 		</div>
 	</div>
-	<div class="topbargreen">
+	<div class="topbargreen modeData">
 		<p onclick="location.href='index.php'">NGMART</p>
 		<div class="centerdiv">
 			<input type="text" id='term' placeholder="Search products">
@@ -156,7 +165,7 @@ if (isset($_SESSION['reg_id']))
 	<!-- --------------------------------top nav bar done  -->
 
 
-	<div class="topbar_bottom">
+	<div class="topbar_bottom modeData">
 		<center>
 			<a href="index.php" <?php if (!isset($_GET['id'])) echo "class=active" ?>>All</a>
 			<?php
@@ -174,6 +183,25 @@ if (isset($_SESSION['reg_id']))
 			?>
 		</center>
 	</div>
+	<?php 
+		if (isset($_SESSION['id'])) {
+			$sql = "SELECT * FROM customerreg_tbl WHERE customerreg_id=$reg_id";
+				$result = mysqli_query($con, $sql);
+				$row = mysqli_fetch_array($result);
+			?>
+			<div class="modeSwitch">
+				🌝
+				<label class="switch">
+					<input type="checkbox" id=modeDataID onchange="modeDataChanged()">
+					<span class="slider round"></span>
+				</label>
+				🌚
+			</div>
+
+			<?php
+		}
+	?>
+	
 	<!-- ---------------------------- categories done -->
 
 	<?php
@@ -209,12 +237,9 @@ if (isset($_SESSION['reg_id']))
 			</div>
 		</div>
 
-
 		<!-- ---------------------------- moving background done -->
 
-
-
-		<div class="container_body">
+		<div class="container_body modeData">
 			<center>
 				<div class="bdy">
 					<!-- <p>Frequent Bought</p> -->
@@ -364,7 +389,7 @@ if (isset($_SESSION['reg_id']))
 		$id = $_GET['id'];
 	?>
 
-		<div class="container_body">
+		<div class="container_body modeData">
 			<center>
 				<div class="bdy">
 					<!-- <p>Frequent Bought</p> -->
@@ -497,7 +522,7 @@ if (isset($_SESSION['reg_id']))
 			</center>
 		</div>
 
-		<div class="container_body">
+		<div class="container_body modeData">
 			<center>
 				<div class="bdy">
 
