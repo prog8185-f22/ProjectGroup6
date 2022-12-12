@@ -28,7 +28,6 @@ if (isset($_SESSION['reg_id']))
 	        $sqlDelete = "DELETE FROM wish_tbl WHERE wish_id = $wish_id";
 	        mysqli_query($con, $sqlDelete);
 	    }
-	
 	}
 } 
 
@@ -61,11 +60,37 @@ if (isset($_SESSION['reg_id']))
             return false;
         }
 
+		function loadMode(){
+			var url = "AJAX/updateMode.php?checkData=true";
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log(this.responseText)
+					var elementsdata = document.getElementsByClassName("modeData");
+					if(this.responseText == 'true'){
+						document.getElementById("modeDataID").checked = true;
+						for(i=0 ; i<elementsdata.length; i++){
+							elementsdata[i].style.cssText = "filter : invert(1) hue-rotate(180deg)";
+						}
+					}
+					else{
+						document.getElementById("modeDataID").checked = false;
+						for(i=0 ; i<elementsdata.length; i++){
+							elementsdata[i].style.cssText = "filter : none";
+						}
+					}
+				}
+			};
+			xhttp.open("GET", url, true);
+			xhttp.send();
+		}
+
         function check(){
-            var type=isMobile();
-            if (type!=false){
-                window.location.replace("mobilepage.html");
-            }
+			loadMode();
+            // var type=isMobile();
+            // if (type!=false){
+            //     window.location.replace("mobilepage.html");
+            // }
         }
 
 		function modeDataChanged(){
@@ -73,32 +98,28 @@ if (isset($_SESSION['reg_id']))
 			var checkedValue = document.getElementById("modeDataID").checked;
 			
 			if(checkedValue){
-				var url = "updateMode.php?checked='true'";
+				var url = "AJAX/updateMode.php?checked='true'";
 				for(i=0 ; i<elementsdata.length; i++){
 				elementsdata[i].style.cssText = "filter : invert(1) hue-rotate(180deg)";
 				}
 			}
 			else{
-				var url = "updateMode.php?checked='false'";
+				var url = "AJAX/updateMode.php?checked='false'";
 				for(i=0 ; i<elementsdata.length; i++){
 					elementsdata[i].style.cssText = "filter : none";
 				}
 			}
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    if(this.responseText == false){
-                        console.log("returning false");
-                        window.location= url;
-                    }
-                    else{
-                        window.location= "index.php";
-                    }
-                }
-
+			var url = "AJAX/updateMode.php?checked="+checkedValue;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log(this.responseText)
+				}
+			};
+			xhttp.open("GET", url, true);
+			xhttp.send();
+            
 		}
-	}
 
 	</script>
 </head>
