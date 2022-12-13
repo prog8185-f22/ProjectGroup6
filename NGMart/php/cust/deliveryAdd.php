@@ -37,7 +37,7 @@ if(isset($_SESSION['reg_id'])){
         {
             elem=document.getElementById(val2);
             x=document.getElementById(val);
-            patt=/^([6-9]{1})([0-9]{9})$/;
+            patt=/^[+]*[0-9]{0,3}[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
             if(!elem.value.match(patt)|| elem.value.trim()=='')
             {   
                 x.style.cssText="display:block;left:25.3vw";
@@ -52,7 +52,7 @@ if(isset($_SESSION['reg_id'])){
         {
             elem=document.getElementById(val2);
             x=document.getElementById(val);
-            patt=/^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
+            patt=/^(?:[A-Z]\d[A-Z][ -]?\d[A-Z]\d)$/i;
             if(!elem.value.match(patt)|| elem.value.trim()=='')
             {   
                 x.style.cssText="display:block; margin-top:-34px; left:31.5vw ";
@@ -285,19 +285,19 @@ if(isset($_SESSION['reg_id'])){
                 <input type="text" name="f_name" id="f_name" onchange="CheckName('err1','f_name')" required>
                 <p id="err1" class="error" > Invalid name! </p><br><br>
 
-                <label>Mobile number</label><br>
-                <input type="text" name="mobile"  id="mobile" onchange="checkPhone('err2','mobile')" placeholder="10-digit mobile number without prefixes" required>
-                <p id="err2" class="error" > Invaild! Mobile number should contain 10 digits!</p><br><br>
+                <label>Mobile Number</label><br>
+                <input type="text" name="mobile"  id="mobile" onchange="checkPhone('err2','mobile')" required>
+                <p id="err2" class="error" > Invaild Mobile number!</p><br><br>
 
-                <label>PIN code</label><br>
-                <input type="text" name="pin" id="pin" onchange="checkPin('err3','pin')" placeholder="6-digits [0-9] PIN code" required><br><br>
-                <p id="err3" class="error" > Invaild! 6-digits [0-9] PIN code!</p>
+                <label>Postal Code</label><br>
+                <input type="text" name="pin" id="pin" onchange="checkPin('err3','pin')" required><br><br>
+                <p id="err3" class="error" > Invaild Postal code!</p>
 
-                <label style="width:50%;">Flat, House no., Building, Company, Apartment</label><br>
+                <label style="width:50%;">Apartment/House no.</label><br>
                 <input type="text" name="house" id="house" onchange="checkHouse('err4','house')" required><br><br>
                 <p id="err4" class="error" > Invaild! Only digits & letters!</p>
 
-                <label>Area, Colony, Street, Sector, Village</label><br>
+                <label>Delivery Instructions</label><br>
                 <input type="text" name="area" id="area" onchange="checkAdd('err5','area')" required>
                 <p id="err5" class="error"> Invaild! Only digits & letters!</p><br><br>
 
