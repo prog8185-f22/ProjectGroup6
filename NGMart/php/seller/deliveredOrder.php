@@ -5,7 +5,7 @@ session_start();
 require("../forget_pass/PHPMailer/src/PHPMailer.php");
 require("../forget_pass/PHPMailer/src/SMTP.php");
 require("../forget_pass/PHPMailer/src/Exception.php");
-require("../../../confidential.php");
+require("../../../../confidential.php");
 
 $o_id=$_GET['o_id'];
 $sql="UPDATE order_tbl SET order_status='delivered' WHERE order_id=$o_id";
