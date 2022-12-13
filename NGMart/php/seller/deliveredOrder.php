@@ -107,7 +107,7 @@ if(mysqli_query($con,$sql))
         </head>
         <body>
             <div class="container">
-            <center><img src="https://raw.githubusercontent.com/anubenoy/NGMart/main/images/logo.png" class="logoimg" alt="NGMartlogo" loading="lazy"/></center>
+            <center><img src="https://raw.githubusercontent.com/alansmathew/VB.net/master/logo.png" class="logoimg" alt="NGMartlogo" loading="lazy"/></center>
                 <p>Hi '.$customername.',<br>
                 Your package has been delivered!</p>
                 <a href="http://localhost/NGMart/php/cust/items.php?seller_id='.$seller_id.'&ps_id='.$ps_id.'">

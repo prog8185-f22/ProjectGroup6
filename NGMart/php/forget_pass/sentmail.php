@@ -3,7 +3,7 @@ session_start();
 require("PHPMailer/src/PHPMailer.php");
 require("PHPMailer/src/SMTP.php");
 require("PHPMailer/src/Exception.php");
-require("../../../confidential.php");
+require("../../../../confidential.php");
 
 // function sentmail($otp_data,$rand,$email){
 if(isset($_SESSION['email']) && isset($_SESSION['rand']) && isset($_SESSION['otp_data'])){
@@ -80,7 +80,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['rand']) && isset($_SESSION['otp
             </head>
             <body>
                 <div class="container">
-                <img src="https://raw.githubusercontent.com/anubenoy/NGMart/main/images/logo.png" alt="NGMartlogo" loading="lazy"/>
+                <img src="https://raw.githubusercontent.com/alansmathew/VB.net/master/logo.png" alt="NGMartlogo" loading="lazy"/>
                     <center><h1>Hello.</h1></center>
                     <p>No need to worry, you can reset your NMGart account password by clicking the link below or entering the OTP:</p>
                     <a href="https://localhost/NGMart/php/forget_pass/verifyotprequest.php?varify='.$rand.'">Reset Password</a>
