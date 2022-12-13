@@ -87,10 +87,10 @@ if (isset($_SESSION['reg_id']))
 
         function check(){
 			loadMode();
-            // var type=isMobile();
-            // if (type!=false){
-            //     window.location.replace("mobilepage.html");
-            // }
+            var type=isMobile();
+            if (type!=false){
+                window.location.replace("mobilepage.html");
+            }
         }
 
 		function modeDataChanged(){
