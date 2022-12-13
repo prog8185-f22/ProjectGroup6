@@ -111,7 +111,7 @@ require_once("../dbconnection.php");
         {
             elem=document.getElementById(val2);
             x=document.getElementById(val);
-            patt=/^([6-9]{1})+([0-9]{9})$/;
+            patt=/^[+]*[0-9]{0,3}[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
             if(!elem.value.match(patt)|| elem.value.trim()=='')
             {   
                 x.style.cssText="visibility:visible";
@@ -354,7 +354,7 @@ require_once("../dbconnection.php");
                     <!-- mobile number  -->
                     <div>
                         <input type="text" id="phone_3" name="phone" onchange="checkPhone('err3_2','phone_3')" placeholder="Mobile Number" required>
-                        <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err3_2" style="visibility: hidden;" data-content="Invaild Mobile number! Should contain 10 digits!" >
+                        <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err3_2" style="visibility: hidden;" data-content="Invaild Mobile number!" >
                             <img src="..\..\images\error.png" height="20px" onclick="err()" width="20px">
                         </a>
                     </div>

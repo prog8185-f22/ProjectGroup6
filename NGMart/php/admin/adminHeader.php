@@ -93,7 +93,7 @@ $reg_id=$_SESSION['reg_id'];
           <p id="errp_1"> Invalid Name!</p> 
           <label class="p_label">Mobile:</label>
           <input type="text" id="phonep_3" name="phone" onblur="checkPhone('errp_2','phonep_3')" value="<?php echo $row['cust_phn_no'] ?>" required> <br>
-          <p id="errp_2" > Invaild number! Should contain 10 digits!</p>  
+          <p id="errp_2" > Invaild number!</p>  
           <label class="p_label">Email :</label>
           <input type="text" id="emailp_3" name="email" onblur="checkEmail('errp_3','emailp_3')" value="<?php echo $row['email'] ?>" required>
           <p id="errp_3">Invaild Email! eg:something@something.com</p>
@@ -189,7 +189,7 @@ $reg_id=$_SESSION['reg_id'];
         {
             elem=document.getElementById(val2);
             x=document.getElementById(val);
-            patt=/^([6-9]{1})+([0-9]{9})$/;
+            patt=/^[+]*[0-9]{0,3}[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
             if(!elem.value.match(patt)|| elem.value.trim()=='')
             {   
                 x.style.cssText="display:block";
