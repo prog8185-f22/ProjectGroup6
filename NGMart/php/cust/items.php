@@ -15,6 +15,8 @@ $seller_id = $_GET['seller_id'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style/itemstyle.css">
+    <title>NGMART</title>
+	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/anjana-varadan/Form-Validation/main/favicon.ico">
     <style>
         *{
             margin:0px;
@@ -157,6 +159,46 @@ $seller_id = $_GET['seller_id'];
                     $result = mysqli_query($con, $sql);
                     $row = mysqli_fetch_array($result);
                     echo '<a href="#">' . $row['name'] . '</a>';
+                    $sql10 = "SELECT p.*,ps.* from product_tbl as p,product_seller_tbl as ps where p.product_id=ps.ps_product_id AND ps.ps_seller_id=$seller_id AND ps.ps_id=$ps_id "; 
+                    $result10 = mysqli_query($con, $sql10);
+                    $row10=mysqli_fetch_array($result10);
+                    ?>
+
+				<script type="module">
+						import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+						const firebaseConfig = {
+							apiKey: "AIzaSyDXkwY5jzhlfgAA7D4XNtZvAhlPH1zfAeA",
+							authDomain: "ngmart-9225f.firebaseapp.com",
+							databaseURL: "https://ngmart-9225f-default-rtdb.firebaseio.com",
+							projectId: "ngmart-9225f",
+							storageBucket: "ngmart-9225f.appspot.com",
+							messagingSenderId: "1063225469590",
+							appId: "1:1063225469590:web:3580381cb9845d6816b0b7",
+							measurementId: "G-ZMKQDKLT0Q"
+						};
+
+						// Initialize Firebase
+						const app = initializeApp(firebaseConfig);
+						import {getDatabase, set, get, update, remove, ref, child, push} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+						const db = getDatabase();
+						var insertBtn = document.querySelector("#insert");
+
+						window.addEventListener("load", (event) => {
+						    push(ref(db, "<?php echo $row['name']?>/ at product page <?php echo $row['prod_name'] ?>"), {
+						        time : Date()
+						    })
+							.then(()=> {
+						        console.log("sucessfully loged");
+						    }).catch((error)=>{
+						        console.log(error);
+						    });
+						});
+					
+					</script>
+
+
+				<?php
                 } else {
                     echo '<a href="login_reg.php">Sign up or Login</a>';
                 }

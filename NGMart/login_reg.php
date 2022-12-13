@@ -14,6 +14,7 @@ require_once("php/dbconnection.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!--  google font roboto -->
+    
 
     <script>
         
@@ -200,6 +201,7 @@ require_once("php/dbconnection.php");
             xhttp.open("GET", "location.php?loc="+document.getElementById('loc').value, true);
             xhttp.send();
         }
+        
 
     </script>
 
@@ -395,11 +397,11 @@ require_once("php/dbconnection.php");
         <!-- --------------------------page 1------------------------------- -->
         <div class="container" id="page1" >
             <center>
-                <form action="php/login.php" method="POST" id="login_form">
+                <form action="php/login.php" method="POST" id="login_form"> 
                     <h1 style="color:rgb(65,178,151);">Sign in to <a href="index.php" style="text-decoration: none;color:rgb(65,178,151);cursor: pointer;">NGMART</a> </h1>
                     <input type="text" name="login_email" id="login_email" onKeyUp="none()" placeholder="Email_ID" required><br>
                     <input type="password" name="login_pass" id="login_pass" onKeyUp="none()" placeholder="Password" required><br>
-                    <input type="submit" value="SIGN IN"><br>
+                    <input type="submit" value="SIGN IN" id="insert"><br>
                     <a class="forget" href="php/forget_pass/forget_pass.php">Forget password ?</a>
                 </form>
             
@@ -525,7 +527,9 @@ require_once("php/dbconnection.php");
             </center>
         </div>
     </div>
+
 </body>
+
 </html>
 <?php
 //}

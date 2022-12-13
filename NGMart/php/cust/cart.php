@@ -154,6 +154,7 @@ if(isset($_SESSION['id'])){
         $sql="select * from cart_tbl where customerreg_id=$reg_id";   
         $result=mysqli_query($con,$sql);
          if(mysqli_num_rows($result)>=1){ //proceed to buy if  cart  has atleast one item for a cust
+            $Cart_items_data = "";
 
             while($row=mysqli_fetch_array($result))
             {
@@ -171,12 +172,53 @@ if(isset($_SESSION['id'])){
 				$offer_price=$org_price-($discount/100)*$org_price;
                 $ps_id=$rowi['ps_id'];
                 $s_id=$rowi['ps_seller_id'];
+                $Cart_items_data .= $rowi['prod'].",";
                 // $cart_qty=$row['cart_qty'];
                 // $ps_stock=$rowi['ps_total_stock'];
 				
                 // if($cart_qty < $ps_stock)
                 // {
+                    $sqlname="SELECT name FROM customerreg_tbl WHERE customerreg_id=$reg_id";
+                    $resultname=mysqli_query($con,$sqlname);
+                    $rowname=mysqli_fetch_array($resultname); 
                 ?>
+
+				<script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyDXkwY5jzhlfgAA7D4XNtZvAhlPH1zfAeA",
+                        authDomain: "ngmart-9225f.firebaseapp.com",
+                        databaseURL: "https://ngmart-9225f-default-rtdb.firebaseio.com",
+                        projectId: "ngmart-9225f",
+                        storageBucket: "ngmart-9225f.appspot.com",
+                        messagingSenderId: "1063225469590",
+                        appId: "1:1063225469590:web:3580381cb9845d6816b0b7",
+                        measurementId: "G-ZMKQDKLT0Q"
+                    };
+
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+                    import {getDatabase, set, get, update, remove, ref, child, push} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+                    const db = getDatabase();
+                    var insertBtn = document.querySelector("#insert");
+
+                    window.addEventListener("load", (event) => {
+                        push(ref(db, "<?php echo $rowname['name'] ?>/at cart page page"), {
+                            items : "<?php echo $Cart_items_data ?>",
+                            time : Date()
+                        })
+                        .then(()=> {
+                            console.log("sucessfully loged");
+                        }).catch((error)=>{
+                            console.log(error);
+                        });
+                    });
+					
+				</script>
+
+
+
                 <div class="cartitems">
                     <a href="items.php?seller_id=<?php echo $s_id ?>&ps_id=<?php echo $ps_id ?>"><img src="../../images/<?php echo $rowi['ps_image'] ?>"></a>
                     <div class="dis"><h2 style="margin-left:20px;"><?php echo $rowi['prod'] ?></h2>
