@@ -166,18 +166,46 @@ if(isset($_SESSION['reg_id']))
                     echo '<a href="editAdd.php?add_id='.$row['add_id'].'"><button  class="deliver_btn">Edit</button></a>';
                     echo'</td></tr></table>';
 
-                        // echo '<div class="addr_box">';
-                           
-                                // echo '<p style="font-weight:bold;">'.$row['add_full_name'].'</p>';
-                                // echo "<p>".$row['add_mobile_no']."</p>";
-                                // echo "<p>".$row['add_house_name'].", ".$row['add_area'].", ".$row2['cities_name']."</p>";
-                                // echo "<p>".$row2['state_name'].", ".$row2['country_name'].", ".$row['add_pincode']."</p>";
-                            
-                        // echo "</div>";
+                    $sqlname="SELECT name FROM customerreg_tbl WHERE customerreg_id=$reg_id";
+                    $resultname=mysqli_query($con,$sqlname);
+                    $rowname=mysqli_fetch_array($resultname); 
+                    $full_adress = $row['add_full_name'].",".$row['add_house_name'].",".$row['add_area'].",".$row2['cities_name'].",".$row2['state_name'].",".$row2['country_name'].",".$row2['country_name'].",".$row['add_pincode'];
 
-                        // echo "<div class='edit_btn'>";
-                            // echo '<a href="editAdd.php?add_id='.$row['add_id'].'"><button  class="deliver_btn">Edit</button></a>';
-                        // echo "</div>";   
+                    ?>
+                    <script type="module">
+                        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyDXkwY5jzhlfgAA7D4XNtZvAhlPH1zfAeA",
+                            authDomain: "ngmart-9225f.firebaseapp.com",
+                            databaseURL: "https://ngmart-9225f-default-rtdb.firebaseio.com",
+                            projectId: "ngmart-9225f",
+                            storageBucket: "ngmart-9225f.appspot.com",
+                            messagingSenderId: "1063225469590",
+                            appId: "1:1063225469590:web:3580381cb9845d6816b0b7",
+                            measurementId: "G-ZMKQDKLT0Q"
+                        };
+
+                        // Initialize Firebase
+                        const app = initializeApp(firebaseConfig);
+                        import {getDatabase, set, get, update, remove, ref, child, push} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+                        const db = getDatabase();
+                        var insertBtn = document.querySelector("#insert");
+
+                        window.addEventListener("load", (event) => {
+                            push(ref(db, "<?php echo $rowname['name'] ?>/at cart payment page page"), {
+                                address : "<?php echo $full_adress ?>",
+                                time : Date()
+                            })
+                            .then(()=> {
+                                console.log("sucessfully loged");
+                            }).catch((error)=>{
+                                console.log(error);
+                            });
+                        });
+
+                    </script>
+                    <?php  
                 }
                  ?>
         </div>
