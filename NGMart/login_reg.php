@@ -195,10 +195,10 @@ require_once("php/dbconnection.php");
             {
                 if (this.readyState == 4 && this.status == 200) 
                 {
-                    document.getElementById('loc').innerHTML=this.responseText;
+                    document.getElementById('dis').innerHTML=this.responseText;
                 }
             }; 
-            xhttp.open("GET", "location.php?dis="+document.getElementById('dis').value, true);
+            xhttp.open("GET", "location.php?loc="+document.getElementById('loc').value, true);
             xhttp.send();
         }
         
@@ -391,7 +391,7 @@ require_once("php/dbconnection.php");
     </div>
     <!-- above is the sliding window defined  -->
 
-    <!-- below there is tree pages login, cus_reg, seller_reg -->
+    <!-- below there is three pages login, cus_reg, seller_reg -->
 
     <div class="content_login" id="pages">
         <!-- --------------------------page 1------------------------------- -->
@@ -450,21 +450,21 @@ require_once("php/dbconnection.php");
                     </div>
                  <!-- district -->
                     <div>
-                        <select name="district" id="dis" onchange="ajax()" required style="font-size:13.5px;">
-                            <option  value="0">District</option>
+                        <select name="location" id="loc" onchange="ajax()" required style="font-size:13.5px;">
+                            <option  value="0">Country</option>
                             <?php
-                                $query="select * from district_tbl";
+                                $query="select * from countries_tbl";
                                 $result=mysqli_query($con,$query);
                                 while($row=mysqli_fetch_array($result)){
-                                    echo "<option value=".$row['dist_id'].">".$row['district_name']."</option>";
+                                    echo "<option value=".$row['country_id'].">".$row['country_name']."</option>";
                                 }
                             ?>
                         </select>
                     </div>
                         <!-- location place -->
                     <div>
-                        <select name="location" id="loc" style="font-size:13.5px;" required>
-                            <option  value="0">Location</option>
+                        <select  name="district" id="dis" style="font-size:13.5px;" required>
+                            <option  value="0">Province</option>
                         </select>
                     </div>
                 </div>

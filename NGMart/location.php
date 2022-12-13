@@ -1,10 +1,10 @@
 <?php
 require_once("php/dbconnection.php");
-$dis=$_GET['dis'];
-$query="select * from location_tbl where location_dist_id = $dis";
+$loc=$_GET['loc'];
+$query="select * from states_tbl where state_country_id = $loc";
 $result=mysqli_query($con,$query);
-echo "<option value=0> Location </option>";
+echo "<option value=0> Province </option>";
 while($row=mysqli_fetch_array($result)){
-    echo "<option value=".$row['location_id'].">".$row['location_name']."</option>";
+    echo "<option value=".$row['state_id'].">".$row['state_name']."</option>";
 }
 ?>
