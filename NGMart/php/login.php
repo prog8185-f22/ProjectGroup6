@@ -1,12 +1,15 @@
 <?php
 session_start();
 include("dbconnection.php");
+include("Firebase/fcon.php");
+include("Firebase/firebaseRDB.php");
 del();
 //fetching data from login form
 $password = $_POST['login_pass'];
 $email = mysqli_real_escape_string($con,$_POST['login_email']);
 $user_homepg;
         
+
 //check login tbl
 $sql = "SELECT * FROM login_tbl WHERE email='$email' and status=1";
             
@@ -65,5 +68,8 @@ $sql = "SELECT * FROM login_tbl WHERE email='$email' and status=1";
         }//redirect this to index.php and show there  
 
     }else{echo "query error";}
+
+
+
 
 ?>
