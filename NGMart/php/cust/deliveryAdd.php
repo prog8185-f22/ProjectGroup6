@@ -67,7 +67,7 @@ if(isset($_SESSION['reg_id'])){
         {
             elem=document.getElementById(val2);
             x=document.getElementById(val);
-            patt=/^[a-zA-Z0-9\.\,\s\(\)]{3,30}$/;
+            patt=/^[a-zA-Z0-9\.\,\s\(\)]{1,30}$/;
             if(!elem.value.match(patt)|| elem.value.trim()=='')
             {   
                 x.style.cssText="display:block; margin-top:-34px; left:32.6vw ";
@@ -294,11 +294,11 @@ if(isset($_SESSION['reg_id'])){
                 <p id="err3" class="error" > Invaild Postal code!</p>
 
                 <label style="width:50%;">Apartment/House no.</label><br>
-                <input type="text" name="house" id="house" onchange="checkHouse('err4','house')" required><br><br>
+                <input type="text" name="house" id="house" onchange="checkHouse('err4','house')"><br><br>
                 <p id="err4" class="error" > Invaild! Only digits & letters!</p>
 
                 <label>Delivery Instructions</label><br>
-                <input type="text" name="area" id="area" onchange="checkAdd('err5','area')" required>
+                <input type="text" name="area" id="area" onchange="checkAdd('err5','area')">
                 <p id="err5" class="error"> Invaild! Only digits & letters!</p><br><br>
 
                 <!-- <label>Landmark</label><br>
@@ -317,22 +317,8 @@ if(isset($_SESSION['reg_id'])){
                 <label>Town/City</label><br>
                 <select name="cities" id="cities" required>
                     <option value="0">Select a city</option>
-                    <?php
-                //$sqlc="SELECT * FROM cities_tbl";
-                //$resultc=mysqli_query($con,$sqlc);
-                //while($rowc=mysqli_fetch_array($resultc)){echo "<option value=".$rowc['cities_id'].">".$rowc['cities_name']."</option>";}?>
                 </select><br><br>
- 
-                <!--<h4 style="font-size:16px;">Add delivery instructions</h4>
-                <p>Preferences are used to plan your delivery. However, shipments can sometimes arrive earlier or later than planned.</p>
-           
-                <label>Address Type</label><br>
-                <select name="add_type" id="add_type" required>
-                    <option value="0" >Select an Address Type</option>
-                    <option value="home">Home</option>
-                    <option value="work">Work</option>
-                    <option value="other">Other</option>
-                </select><br><br> -->
+
                 
                 <input type="checkbox" name="default_add" value="d">
                 <label>Use as my default address</label><br><br>

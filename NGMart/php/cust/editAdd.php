@@ -21,11 +21,11 @@ if(isset($_SESSION['reg_id'])){
         {   
             $d1=$_POST['default_add']; 
             if($d1=='on'){ 
-                $sql="UPDATE address_tbl SET add_full_name='$f_name',add_pincode=$pin,add_country_id=$country,add_state_id=$state,add_cities_id= $cities,add_house_name='$house',add_area='$area',add_mobile_no='$mobile',add_default='true' WHERE add_id=$add_id";
+                $sql="UPDATE address_tbl SET add_full_name='$f_name',add_pincode='$pin',add_country_id=$country,add_state_id=$state,add_cities_id= $cities,add_house_name='$house',add_area='$area',add_mobile_no='$mobile',add_default='true' WHERE add_id=$add_id";
                 if(mysqli_query($con,$sql)){ header("location:deliveryAdd.php");}
         }
         }else{  
-                $sql="UPDATE address_tbl SET add_full_name='$f_name',add_pincode=$pin,add_country_id=$country,add_state_id=$state,add_cities_id= $cities,add_house_name='$house',add_area='$area',add_mobile_no='$mobile',add_default='false' WHERE add_id=$add_id"; 
+                $sql="UPDATE address_tbl SET add_full_name='$f_name',add_pincode='$pin',add_country_id=$country,add_state_id=$state,add_cities_id= $cities,add_house_name='$house',add_area='$area',add_mobile_no='$mobile',add_default='false' WHERE add_id=$add_id"; 
                 if(mysqli_query($con,$sql)){ header("location:deliveryAdd.php");}
         }
         
@@ -218,16 +218,16 @@ if(isset($_SESSION['reg_id'])){
             <input type="text" name="mobile"  id="mobile" onchange="checkPhone('err2','mobile')" value="<?php echo $row['add_mobile_no']; ?>" required>
             <p id="err2" class="error" > Invaild! Mobile number should contain 10 digits!</p><br><br>
             
-            <label>PIN code</label><br>
+            <label>Postal code</label><br>
             <input type="text" name="pin" id="pin" onchange="checkPin('err3','pin')" required value="<?php echo $row['add_pincode']; ?>"><br><br>
             <p id="err3" class="error" > Invaild Postal Code!</p>
             
             <label style="width:50%;">Apartment/House no.</label><br>
-            <input type="text" name="house" id="house" onchange="checkHouse('err4','house')" value="<?php echo $row['add_house_name']; ?>"required><br><br>
+            <input type="text" name="house" id="house" onchange="checkHouse('err4','house')" value="<?php echo $row['add_house_name']; ?>"><br><br>
             <p id="err4" class="error" > Invaild! Only digits & letters!</p>
             
             <label>Delivery Instructions</label><br>
-            <input type="text" name="area" id="area" onchange="checkAdd('err5','area')" value="<?php echo $row['add_area']; ?>" required>
+            <input type="text" name="area" id="area" onchange="checkAdd('err5','area')" value="<?php echo $row['add_area']; ?>">
             <p id="err5" class="error"> Invaild! Only digits & letters!</p><br><br>
             
             <!-- <label>Landmark</label><br>
