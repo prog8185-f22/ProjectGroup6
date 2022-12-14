@@ -79,37 +79,16 @@ The registered customer, seller, and admin can access the website through the  i
         • Pay with Payment Gateway<br />
     4 Guest : customer who can view or search items.<br />
 
-5 Database Design 
-<br />
-A database is an organized mechanism that has the capability of storing information through which a user can retrieve stored information in an effective and efficient manner. The data is the purpose of any database and must be protected. 
-The database design is a two level process. In the first step, user requirements are gathered together and a database is designed which will meet these requirements as clearly as possible. This step is called Information Level Design and it is taken independent of any individual DBMS. <br />
-In the second step, this Information level design is transferred into a design for the specific DBMS that will be used to implement the system in question. This step is called Physical Level Design, concerned with the characteristics of the specific DBMS that will be used. A database design runs parallel with the system design. The organization of the data in the database is aimed to achieve the following two major objectives: 
-•	Data Integrity <br />
-•	Data independence <br />
- 
-Relational Database Management System (RDBMS) <br />
-A relational model represents the database as a collection of relations. Each relation resembles a table of values or file of records. In formal relational model terminology, a row is called a tuple, a column header is called an attribute and the table is called a relation. A relational database consists of a collection of tables, each of which is assigned a unique name. A row in a tale represents a set of related values. <br />
- 
-Relationships <br />
-•	Table relationships are established using Key. The two main keys of prime importance are Primary Key & Foreign Key. Entity Integrity and Referential Integrity  Relationships can be established with these keys. <br />
-•	Entity Integrity enforces that no Primary Key can have null values. <br />
-•	Referential Integrity enforces that no Primary Key can have null values. <br />
-•	Referential Integrity for each distinct Foreign Key value, there must exist a matching Primary Key value in the same domain. Other key are Super Key and Candidate Keys. <br />
+![db Diagram](https://github.com/anjana-varadan/Form-Validation/blob/main/dbDesign.png)
+
+A database is an organized mechanism that has the capability of storing information through which a user can retrieve stored information in an effective and efficient manner.<br />
+
+Relational Database Management System (RDBMS)<br /> 
+A relational model represents the database as a collection of relations. Each relation resembles a table of values or file of records. <br />
  
 Normalization <br />
-Data are grouped together in the simplest way so that later changes can be made with minimum impact on data structures. Normalization is formal process of data structures in manners that eliminates redundancy and promotes integrity. 
-Normalization is a technique of separating redundant fields and breaking up a large table into a smaller one. It is also used to avoid insertion, deletion, and updating anomalies.  <br />
-Normal form in data modelling use two concepts, keys and relationships. A key uniquely identifies a row in a table.  
-There are two types of keys, primary key and foreign key. A primary key is an element or a combination of elements in a table whose purpose is to identify records from the same table. A foreign key is a column in a table that uniquely identifies record from a different table. All the tables have been normalized up to the third normal form. <br />
-
-First Normal Form <br />
-The First Normal Form states that the domain of an attribute must include only atomic values and that the value of any attribute in a tuple must be a single value from the domain of that attribute. In other words, 1NF disallows “relations within relations” or “relations as attribute values within tuples”. The only attribute values permitted by 1NF are single atomic or indivisible values. The first step is to put the data into First Normal Form. This can be donor by moving data into separate tables where the data is of similar type in each table. Each table is given a Primary Key or Foreign Key as per requirement of the project. In this we form new relations for each non-atomic attribute or nested relation. This eliminated repeating groups of data. A relation is said to be in first normal form if only if it satisfies the constraints that contain the primary key only. <br />
- 
-Second Normal Form <br />
-According to Second Normal Form, for relations where primary key contains multiple attributes, no non-key attribute should be functionally dependent on a part of the primary key. In this we decompose and setup a new relation for each partial key with its dependent attributes. Make sure to keep a relation with the original primary key and any attributes that are fully functionally dependent on it. This step helps in taking out data that is only dependent on a part of the key.  A relation is said to be in second normal form if and only if it satisfies all the first normal form conditions for the primary key and every non-primary key attributes of the relation is fully dependent on its primary key alone. <br />
- 
-Third Normal Form <br />
-According to Third Normal Form, Relation should not have a non-key attribute functionally determined by another non-key attribute or by a set of non-key attributes. That is, there should be no transitive dependency on the primary key. In this we decompose and set up relation that includes the non-key attributes that functionally determines other non-key attributes. This step is taken to get rid of anything that does not depend entirely on the Primary Key. A relation is said to be in third normal form if only if it is in second normal form and more over the non key attributes of the relation should not be depend on other non-key attribute. <br />
+Normalization is formal process of data structures in manners that eliminates redundancy and promotes o 
+integrity. All tables are normalised to maximum of 3NF.<br />
  
 NoSQL Firebase<br />
 
